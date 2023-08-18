@@ -33,6 +33,19 @@ code {
   column-gap: 10px;
 }
 
+.grid-container-test {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  /*column-gap: 10px;*/
+  grid-template-areas:
+    "top top top"
+    "left middle right"
+    "bottom bottom bottom";
+}
+
 /*
 THIS MADE the container holding the player cards shrinks to fit. weird
 .pq-container {
@@ -53,21 +66,139 @@ THIS MADE the container holding the player cards shrinks to fit. weird
   background-color: red;
 }
 */
+.grid-top {
+  grid-area: top;
+  padding: 10px;
+}
+.grid-bottom {
+  grid-area: bottom;
+  padding: 10px;
+}
+
+.grid-1 {
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  grid-area: left;
+}
+
+.grid-2 {
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  grid-area: middle;
+}
+
+.grid-3 {
+  overflow: hidden;
+  padding: 10px;
+  display: grid;
+  background-color: green;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 8fr;
+  grid-area: right;
+  row-gap: 10px;
+}
+
+/* V2
+.pq-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.pq-wrapper {
+  flex-grow: 1;
+  border-radius: 10px;
+  background-color: aqua;
+  overflow-y: scroll;
+}
+
+.players-holder {
+  overflow: scroll;
+}
+.player-card {
+  background-color: red;
+}
+*/
 
 .pq-container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgb(26, 26, 26);
+  overflow: hidden; /*to prevent cards frill spilling out*/
 }
 .pq-wrapper {
   flex-grow: 1;
-  background-color: aqua;
-  border-radius: 10px;
-  margin: 10px;
   overflow-y: scroll;
 }
 
+.players-holder {
+  background-color: black;
+}
 .player-card {
+}
+
+/*HIDE SCROLLBAR FOR INACTIVITY
+https://www.geeksforgeeks.org/how-to-hide-scroll-bar-for-inactivity/
+*/
+
+/*
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 5px;
+  transition: background 2s linear;
+  -webkit-transition: background 2s linear;
+}
+*/
+
+/*
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+  border-radius: 5px;
+}*/
+
+body {
+  color: grey;
+}
+
+.player-card {
+  margin: 10px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.test {
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+.test-b {
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.team-card {
+  height: 100%;
+  width: 200px;
   background-color: red;
+  margin-right: 10px;
 }
