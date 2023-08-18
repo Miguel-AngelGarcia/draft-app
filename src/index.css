@@ -1,13 +1,73 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.body-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  overflow: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: minmax(auto, 1fr);
+  height: 100vh;
+  width: 100vw;
+  column-gap: 10px;
+}
+
+/*
+THIS MADE the container holding the player cards shrinks to fit. weird
+.pq-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.pq-wrapper {
+  flex-grow: 1;
+  background-color: aqua;
+  border-radius: 10px;
+  margin: 10px;
+  overflow-y: scroll;
+}
+
+.player-card {
+  background-color: red;
+}
+*/
+
+.pq-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.pq-wrapper {
+  flex-grow: 1;
+  background-color: aqua;
+  border-radius: 10px;
+  margin: 10px;
+  overflow-y: scroll;
+}
+
+.player-card {
+  background-color: red;
 }
